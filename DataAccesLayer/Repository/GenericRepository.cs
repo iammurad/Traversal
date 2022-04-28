@@ -17,6 +17,12 @@ namespace DataAccesLayer.Repository
             c.SaveChanges();
         }
 
+        public T GetById(int id)
+        {
+            using var c = new Context();
+            return c.Set<T>().Find(id);
+        }
+
         public List<T> GetListAll()
         {
             using var c = new Context();
